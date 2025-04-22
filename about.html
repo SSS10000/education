@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About - SSS Education</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(to bottom right, #e3f2fd, #ffffff);
+      color: #333;
+    }
+
+    header {
+      background: #004aad;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+ header p {
+      font-size: 1.5rem;
+      margin-top: 5px;
+	  font-family: algirian;
+          }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 5px;
+	  font-family: algirian;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #003580;
+      flex-wrap: wrap;
+      padding: 10px 0;
+    }
+
+    nav a {
+      margin: 5px 10px;
+      background-color: #ffffff;
+      color: #003580;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #007bff;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 25px;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2.section-title {
+      text-align: center;
+      font-size: 2rem;
+      color: #1565c0;
+      margin-bottom: 30px;
+      position: relative;
+	 font-family: algirian;
+          }
+
+
+    h2.section-title::after {
+      content: '';
+      width: 60px;
+      height: 3px;
+      background: #2196f3;
+      display: block;
+      margin: 10px auto 0;
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .about-box {
+      background: #f0faff;
+      border-left: 6px solid #2196f3;
+      border-radius: 12px;
+      padding: 25px;
+      transition: transform 0.3s, background 0.3s;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      position: relative;
+    }
+
+    .about-box:hover {
+      transform: translateY(-5px);
+      background: #e3f2fd;
+    }
+
+    .about-box h3 {
+      color: #0d47a1;
+      margin-bottom: 12px;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+	  font-family: algirian;
+    }
+
+    .about-box h3::before {
+      content: '⭐';
+      margin-right: 10px;
+      font-size: 1.2rem;
+      color: #1565c0;
+	  	      }
+
+    .about-box p {
+      font-size: 1rem;
+      line-height: 1.6;
+	  font-family: algirian;
+    }
+
+    .highlight {
+      color: #0d47a1;
+      font-weight: 600;
+    }
+
+    .features-section {
+      margin-top: 50px;
+    }
+
+    .features-section h2 {
+      margin-bottom: 30px;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .feature-box {
+      background: #e8f4ff;
+      border-left: 5px solid #2196f3;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .feature-box h4 {
+      color: #0d47a1;
+      margin-bottom: 8px;
+    }
+
+    footer {
+      background: #003580;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.95rem;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      h2.section-title {
+        font-size: 1.6rem;
+      }
+
+      nav {
+        flex-direction: column;
+      }
+
+      nav a {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>SSS EDUCATION</h1>
+  <p>Smart Learning for Smart Students</p>
+</header>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="about.html">About</a>
+  <a href="student.html">Student</a>
+  <a href="notes.html">Notes</a>
+  <a href="pdf.html">PDF</a>
+  <a href="books.html">Books</a>
+  <a href="class.html">Class</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<div class="container">
+  <h2 class="section-title">About Us</h2>
+  <div class="about-content">
+    <div class="about-box">
+      <h3>Our Mission</h3>
+      <p>At <span class="highlight">SSS Education</span>, our mission is to empower students from class 6th to 12th with smart, accessible, and high-quality learning tools. We aim to simplify learning and make it enjoyable and effective.</p>
+    </div>
+    <div class="about-box">
+      <h3>Why Choose Us</h3>
+      <p>We provide a one-stop educational platform for notes, MCQs, motivational content, doubt-solving, tools, and career guidance. Our approach is student-focused, dynamic, and always evolving.</p>
+    </div>
+    <div class="about-box">
+      <h3>Our Vision</h3>
+      <p>To become the most trusted educational hub for school students by promoting <span class="highlight">Smart Learning for Smart Students</span>, helping them succeed in academics and life.</p>
+    </div>
+    <div class="about-box">
+      <h3>Our Team</h3>
+      <p>Our dedicated team of educators, designers, and developers is passionate about education. We are constantly improving and updating our resources to meet student needs.</p>
+    </div>
+  </div>
+  <div class="features-section">
+    <h2 class="section-title">हमारी विशेषताएँ / Our Features</h2>
+    <div class="feature-list">
+      <div class="feature-box">
+        <h4>📘 अध्ययन सामग्री / Study Materials</h4>
+        <p>कक्षा 6वीं से 12वीं तक के लिए विषयवार नोट्स, सभी विषयों के सूत्र, PDF और बुक्स।</p>
+      </div>
+      <div class="feature-box">
+        <h4>❓ अभ्यास और संदेह समाधान / Practice & Doubt Solving</h4>
+        <p>रोज़ाना MCQs, पूछें अपना सवाल सुविधा, डेली स्टडी प्लानर।</p>
+      </div>
+      <div class="feature-box">
+        <h4>🎬 प्रेरणा और मार्गदर्शन / Motivation & Guidance</h4>
+        <p>मोटिवेशनल वीडियो, डेली स्टडी टिप्स, करियर गाइडेंस और स्कॉलरशिप जानकारी।</p>
+      </div>
+      <div class="feature-box">
+        <h4>🛠 अध्ययन उपकरण / Study Tools</h4>
+        <p>ऑनलाइन कैलकुलेटर, पोमोडोरो टाइमर, पीरियॉडिक टेबल, इंग्लिश डिक्शनरी।</p>
+      </div>
+      <div class="feature-box">
+        <h4>📢 परीक्षा सहायता / Exam Support</h4>
+        <p>परीक्षा फॉर्म, प्रवेश पत्र, रिजल्ट लिंक, अवकाश कैलेंडर।</p>
+      </div>
+      <div class="feature-box">
+        <h4>💬 संपर्क और सपोर्ट / Contact & Support</h4>
+        <p>WhatsApp सपोर्ट, सहायता हेतु संपर्क फ़ॉर्म, अपडेट्स और अलर्ट।</p>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+  &copy; 2025 SSS Education. All rights reserved.
+</footer>
+</body>
+</html>

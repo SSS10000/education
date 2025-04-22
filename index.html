@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="google-adsense-account" content="ca-pub-2913395438000244">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SSS Education - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #f5f8ff, #e6f0ff);
+  color: #222;
+}
+    
+    .fireball-container {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      margin-right: 4px;
+      animation: rotateFireball 10s infinite linear;
+    }
+
+    .fireball {
+      width: 90%;
+      height: 90%;
+      border-radius: 5%;
+      background: linear-gradient(45deg, #00c6ff, #0072ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      font-weight: 700;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 0 20px rgba(0, 128, 255, 0.9), 0 0 40px rgba(0, 128, 255, 0.8);
+      transform-origin: center;
+    }
+
+    .fireball::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 50%;
+      border: 5px solid transparent;
+      background-image: radial-gradient(circle, rgba(255, 255, 255, 0.3), rgba(0, 128, 255, 0.7));
+      background-origin: border-box;
+      background-clip: content-box, border-box;
+      animation: pulseBorder 2s infinite ease-in-out;
+    }
+
+    .fireball span {
+      font-size: 32px;
+      font-weight: 700;
+      color: white;
+      letter-spacing: 4px;
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.9), 0 0 20px rgba(0, 128, 255, 0.8);
+    }
+
+    @keyframes pulseBorder {
+      0% {
+        transform: scale(1);
+        border-color: #00c6ff;
+      }
+      50% {
+        transform: scale(1.1);
+        border-color: #0072ff;
+      }
+      100% {
+        transform: scale(1);
+        border-color: #00c6ff;
+      }
+    }
+
+    @keyframes rotateFireball {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    
+    /* Hover effect for interactive feel */
+    .fireball:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 30px rgba(0, 128, 255, 1), 0 0 50px rgba(0, 128, 255, 0.8);
+    }
+
+header {
+  background: linear-gradient(to right, #004aad, #0073e6);
+  color: white;
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-family: Algerian;
+}
+
+nav {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 18px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+nav a:hover {
+  background: #ffffff;
+  color: #004aad;
+}
+
+.auth-buttons {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.auth-buttons button {
+  background: white;
+  color: #004aad;
+  border: none;
+  padding: 8px 16px;
+  margin-left: 10px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.auth-buttons button:hover {
+  background: #e0e0e0;
+}
+
+.hero {
+  background: linear-gradient(to right, #0073e6, #00c6ff);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  font-family: Algerian;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  	font-family: Algerian;
+}
+
+.btn {
+  background: white;
+  color: #0073e6;
+  padding: 12px 30px;
+  border-radius: 40px;
+  font-weight: bold;
+  border: none;
+  text-decoration: none;
+  font-family: Algerian;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.btn:hover {
+  background: #f1f1f1;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 25px;
+  padding: 50px 20px;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+.feature-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card h3 {
+  color: #004aad;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  	font-family: Algerian;
+}
+
+.feature-card p {
+  font-size: 1.5rem;
+  color: #333;
+  line-height: 1.5;
+  	font-family: Algerian;
+}
+
+.about, .contact {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.about h2, .contact h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  margin-top:-20px;
+  color: #004aad;
+  font-family: Algerian;
+}
+
+.about p {
+  max-width: 750px;
+  margin: auto;
+  font-size: 1.2rem;
+  color: #444;
+  line-height: 1.6;
+  	font-family: Algerian;
+}
+
+.contact a {
+  display: inline-block;
+  margin: 10px;
+  background: #004aad;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.contact a:hover {
+  background: #003580;
+}
+
+footer {
+  background: #004aad;
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 1.0rem;
+  font-family: Algerian;
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+  nav a {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+  .hero h2 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+/* Modal Styles */
+#accessModal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+
+#accessModal .modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+#accessModal button {
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.register-btn {
+  background: #0073e6;
+  color: white;
+}
+
+.login-btn {
+  background: #004aad;
+  color: white;
+}
+
+/* Feature Details Modal */
+#featureDetails {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.85);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  transition: opacity 0.5s ease;
+  padding: 30px 15px;
+}
+
+#featureDetails.hidden {
+  display: none;
+}
+
+.feature-details-content {
+  background: #fff;
+  color: #000;
+  max-width: 800px;
+  width: 100%;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  position: relative;
+  animation: slideIn 0.6s ease;
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+@keyframes slideIn {
+  0% { transform: translateY(100px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.feature-details-content h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #004aad;
+}
+
+.details-text p {
+  margin: 10px 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #004aad;
+  font-weight: bold;
+}
+
+
+#featureDetails {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  padding: 30px 15px;
+  overflow: hidden;
+}
+
+#featureDetails.hidden {
+  display: none;
+}
+
+.feature-details-content {
+  background: rgba(255, 255, 255, 0.95);
+  color: #000;
+  max-width: 900px;
+  width: 100%;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  position: relative;
+  animation: slideIn 0.5s ease-out;
+  overflow-y: auto;
+  max-height: 88vh;
+  backdrop-filter: blur(4px);
+  border: 1px solid #ddd;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.feature-details-content h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #004aad;
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+  font-family: Algerian;
+}
+
+.details-text p {
+  margin: 12px 0;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  background: #f1f6ff;
+  padding: 10px 15px;
+  border-left: 4px solid #0073e6;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.details-text p:hover {
+  background: #e6f0ff;
+  transform: scale(1.01);
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 1.7rem;
+  color: #004aad;
+  background: #f1f1f1;
+  padding: 5px 12px;
+  border-radius: 50%;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.close-btn:hover {
+  background: #ddd;
+  color: red;
+}
+
+/* Optional custom scrollbar for large content */
+.feature-details-content::-webkit-scrollbar {
+  width: 8px;
+}
+.feature-details-content::-webkit-scrollbar-thumb {
+  background-color: #0073e6;
+  border-radius: 10px;
+}
+.feature-details-content::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
+}
+
+</style>
+</head>
+<body>
+<audio id="welcomeAudio" src="welcome.mp3" preload="auto"></audio>
+<header>
+ <div class="fireball-container">
+      <div class="fireball">
+        <span>SSS</span>
+      </div>
+    </div>
+	<center style="margin-top:-55px;">
+   	<h1>SSS EDUCATION</h1>
+	</center>
+	<div class="auth-buttons" id="authButtons"></div>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="about.html">About</a>
+  <a href="student.html">Student</a>
+  <a href="notes.html">Notes</a>
+  <a href="pdf.html">PDF</a>
+  <a href="books.html">Books</a>
+  <a href="class.html">Class</a>
+  <a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+  <h2>Welcome to SSS Education</h2>
+  <p>Smart tools, smart study, smart future. Explore all features!</p>
+  <a class="btn" href="#features">Explore Features</a>
+</section>
+<section class="features" id="features">
+  <div class="feature-card" onclick="checklogin('#')"><h3>📚 Class-wise Notes</h3><p>Class 6th to 12th all subjects important notes.</p></div>
+  <div class="feature-card" onclick="checklogin('#')"><h3>🧠 Daily MCQs</h3><p>New questions every day! Practice MCQs class-wise.</p></div>
+  <div class="feature-card" onclick="checklogin('#')"><h3>🎥 Motivational Boost</h3><p>Videos & tips to stay inspired and focused on study.</p></div>
+  <div class="feature-card" onclick="checklogin('#')"><h3>❓ Ask a Doubt</h3><p>Ask subject questions & get expert solutions.</p></div>
+  <div class="feature-card" onclick="checklogin('#')"><h3>🧮 All Formulas</h3><p>Maths, Science, and all subject formulas at one place.</p></div>
+  <div class="feature-card" onclick="checklogin('#')"><h3>🛠 Study Tools</h3><p>Calculator, Periodic Table, Dictionary, and more.</p></div>
+  <div class="feature-card" onclick="checklogin('#')"><h3>📢 Exam Alerts</h3><p>Forms, Results, Admit Cards, and Holiday List.</p></div>
+  <div class="feature-card" onclick="checklogin('#')"><h3>🎯 Career & Support</h3><p>Scholarships, career advice, and personal help.</p></div>
+</section>
+<div id="featureDetails" class="hidden">
+  <div class="feature-details-content">
+    <span class="close-btn" onclick="toggleDetails()">✖</span>
+    <h2>📘 All FEATURES OF SSS EDUCATION</h2>
+    <div class="details-text">
+  <p><strong>📚 Class-wise Notes:</strong> Class 6th to 12th के लिए subject-wise handwritten & digital notes — आसान भाषा में, परीक्षा-केंद्रित कंटेंट के साथ।<br><em>Subject-wise handwritten & digital notes for Class 6th to 12th — in easy language with exam-focused content.</em></p>
+  <p><strong>🧠 Daily MCQs:</strong> रोज़ नए MCQs class-wise। हर प्रश्न के साथ सही उत्तर और संक्षिप्त explanation भी मिलेगा अभ्यास के लिए।<br><em>Daily class-wise MCQs with correct answers and short explanations for practice.</em></p>
+  <p><strong>🎥 Motivational Boost:</strong> डेली मोटिवेशनल वीडियो, स्टडी सक्सेस टिप्स, और लाइफ-चेंजिंग सलाह जो स्टूडेंट्स को प्रेरित करेगी।<br><em>Daily motivational videos, study success tips, and life-changing advice to inspire students.</em></p>
+  <p><strong>❓ Ask a Doubt:</strong> किसी भी विषय का सवाल पूछिए — 24x7 doubt support system से expert solutions पाइए।<br><em>Ask questions from any subject — get expert solutions through a 24x7 doubt support system.</em></p>
+  <p><strong>🧮 All Formulas:</strong> Class-wise और subject-wise formulas एक जगह — Maths, Physics, Chemistry आदि के लिए।<br><em>All class-wise and subject-wise formulas organized in one place — for Maths, Physics, Chemistry, and more.</em></p>
+  <p><strong>🛠 Study Tools:</strong> Smart tools जैसे Scientific Calculator, Dictionary, Periodic Table, Unit Converter और अन्य learning tools।<br><em>Smart tools like Scientific Calculator, Dictionary, Periodic Table, Unit Converter, and more learning aids.</em></p>
+  <p><strong>📢 Exam Alerts:</strong> सभी board और competitive exams के notices — form dates, admit card, results, holidays सब timely update होगा।<br><em>All board and competitive exam notices — timely updates on form dates, admit cards, results, and holidays.</em></p>
+  <p><strong>🎯 Career & Support:</strong> Career guidance, scholarship जानकारी, motivational counselling और student mentorship।<br><em>Career guidance, scholarship information, motivational counselling, and student mentorship.</em></p>
+  <p><strong>📖 Books & PDFs:</strong> NCERT, SCERT और custom notes — online पढ़ने और डाउनलोड करने का विकल्प। Search bar भी उपलब्ध है।<br><em>NCERT, SCERT, and custom notes — with options to read online and download. Search bar is also available.</em></p>
+  <p><strong>🎓 Online Classes:</strong> Live और recorded classes — subject-wise access के साथ। Join करने या बाद में देखने के direct links भी।<br><em>Live and recorded classes — subject-wise access with direct links to join, join later, or watch recorded sessions.</em></p>
+  <p><strong>📊 Smart Dashboard:</strong> हर student के लिए personalized dashboard — जहां से notes, MCQs, classes सब access किए जा सकते हैं।<br><em>Personalized dashboard for each student — access notes, MCQs, and classes from one place.</em></p>
+  <p><strong>🔍 Search Feature:</strong> Subject या topic नाम से किसी भी notes, book या tool को आसानी से खोजने का विकल्प।<br><em>Option to easily search any notes, books, or tools by subject or topic name.</em></p>
+  <p><strong>🌐 Bilingual Support:</strong> सभी content Hindi और English दोनों में उपलब्ध — बेहतर समझ के लिए।<br><em>All content is available in both Hindi and English for better understanding.</em></p>
+  <p><strong>💡 Weekly Study Plan:</strong> Weekly subject-wise study schedule और time management tips हर class के लिए।<br><em>Weekly subject-wise study schedule and time management tips for every class.</em></p>
+  <p><strong>🏆 Quiz Competitions:</strong> Weekly quiz contests — leaderboard और reward system के साथ active learners के लिए।<br><em>Weekly quiz contests with leaderboard and reward system for active learners.</em></p>
+  <p><strong>🧾 Downloadable Resources:</strong> Practice papers, sample papers, previous year papers PDF format में उपलब्ध।<br><em>Practice papers, sample papers, and previous year papers available in PDF format.</em></p>
+  <p><strong>👩‍🏫 Teacher's Corner:</strong> Teachers के लिए special login area — जहां वे content upload और manage कर सकते हैं।<br><em>Special login area for teachers — to upload and manage content.</em></p>
+  <p><strong>💬 Student Feedback & Suggestions:</strong> Platform पर feedback देने और नए features suggest करने का विकल्प।<br><em>Option to give feedback and suggest new features on the platform.</em></p>
+</div>
+  </div>
+</div>
+<section class="about">
+  <h2>About Us</h2>
+  <p>We aim to provide free and smart resources to help every student achieve academic success through tech-powered study materials, tools, and support.</p>
+</section>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2913395438000244"
+     crossorigin="anonymous"></script>
+<section class="contact">
+  <h2>Contact & Support</h2>
+  <a href="mailto:SSSEDUCATION10000@GMAIL.COM">📩 Email Support</a>
+  <a href="https://wa.me/9162592236">📱 WhatsApp Chat</a>
+</section>
+<footer>
+  &copy; 2025 SSS Education. All rights reserved.
+</footer>
+<div id="accessModal">
+  <div class="modal-content">
+    <h3>🔒 Access Restricted</h3>
+    <p>Please first <strong>Register</strong> and then <strong>Login</strong> to enjoy all features.</p>
+    <a href="registration.html"><button class="register-btn">Register Now</button></a>
+    <a href="login.html"><button class="login-btn">login Now</button></a>
+  </div>
+</div>
+<script>
+  function checkLogin(destination) {
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    if (isLoggedIn) {
+      window.location.href = destination;
+    } else {
+      document.getElementById('accessModal').style.display = 'flex';
+    }
+  }
+  window.onclick = function(event) {
+    const modal = document.getElementById('accessModal');
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  };
+  const authButtons = document.getElementById('authButtons');
+  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+  if (isLoggedIn) {
+    authButtons.innerHTML = '<button onclick="logout()">Logout</button>';
+  } else {
+    authButtons.innerHTML = '<a href="registration.html"><button>Register</button></a><a href="login.html"><button>login</button></a>';
+  }
+  function logout() {
+    localStorage.removeItem('isLoggedIn');
+    location.reload();
+  }
+  // Explore Feature click par page khole
+document.querySelector('.btn').addEventListener('click', (e) => {
+  e.preventDefault();
+  toggleDetails();
+});
+function toggleDetails() {
+  const modal = document.getElementById('featureDetails');
+  modal.classList.toggle('hidden');
+}
+</script>
+<script>
+  // Ensure the audio plays only once per visit or as required
+  const audio = document.getElementById("welcomeAudio");
+  // Add click listener to the whole document
+  document.addEventListener("click", function () {
+    // Play the sound only if it's not already playing
+    if (audio.paused) {
+      audio.play().catch(e => {
+        // Optional: log error if autoplay fails
+        console.log("Audio play error:", e);
+      });
+    }
+  });
+</script>
+</body>
+</html>
