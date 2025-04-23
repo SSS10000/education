@@ -146,7 +146,7 @@
     </div>
     <button type="submit"><i class="fa-solid fa-paper-plane"></i> सबमिट करें</button>
     <div id="successMsg" class="success" style="display: none;">
-      "✅ आपका अभ्यास फॉर्म सफलतापूर्वक भेज दिया गया है! शिक्षक का जवाब जल्द ही इस पेज पर आपको दिखाई देगा। कृपया पेज को समय-समय पर चेक करते रहें।"  
+      ✅ आपका अभ्यास फॉर्म सफलतापूर्वक भेज दिया गया है! शिक्षक का जवाब जल्द ही इस पेज पर आपको दिखाई देगा। कृपया पेज को समय-समय पर चेक करते रहें।
     </div>
   </form>
 
@@ -193,7 +193,9 @@
 
       form.reset();
       successMsg.style.display = "block";
-      setTimeout(() => successMsg.style.display = "none", 4000);
+
+      // Show success message for 10 seconds (10000ms)
+      setTimeout(() => successMsg.style.display = "none", 10000);  // 10 seconds
 
       loadLatestAnswer();  // Load teacher's reply after submitting
     });
