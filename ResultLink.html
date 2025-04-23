@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Feature Coming Soon</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #dbe9f4, #f6fafd);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .message-box {
+      background-color: #ffffff;
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      animation: fadeIn 1.2s ease-in-out;
+      max-width: 90%;
+    }
+
+    .message-box h2 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    .message-box p {
+      font-size: 18px;
+      color: #555;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .back-button {
+      margin-top: 25px;
+      padding: 10px 25px;
+      font-size: 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="message-box">
+    <h2>🔒 Feature Locked</h2>
+    <p>यह फीचर जल्द ही उपलब्ध होगा,<br> कृपया इंतजार करें।</p>
+    <button class="back-button" onclick="window.location.href='student.html'">🔙 वापस जाएं</button>
+  </div>
+
+</body>
+</html>
