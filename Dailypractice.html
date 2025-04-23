@@ -156,23 +156,49 @@
     <p id="answerText"></p>
   </div>
 
-<div id="studentReply"></div>
+  <script>
+    const form = document.getElementById('practiceForm');
+    const successMsg = document.getElementById('successMsg');
+    const latestAnswer = document.getElementById('latestAnswer');
+    const answerText = document.getElementById('answerText');
 
-<script>
-  // Submit hone ke baad ke liye ya page refresh par
-  const plans = JSON.parse(localStorage.getItem('practicePlans')) || [];
+    function loadLatestAnswer() {
+      const plans = JSON.parse(localStorage.getItem('practicePlans')) || [];
+      if (plans.length > 0) {
+        const last = plans[plans.length - 1];
+        if (last.reply && last.reply.trim() !== "") {
+          latestAnswer.style.display = "block";
+          answerText.textContent = last.reply;
+        }
+      }
+    }
 
-  // Agar ek student ka hi data dikhana hai (jaise last wala)
-  if (plans.length > 0) {
-    const lastPlan = plans[plans.length - 1];
-    const reply = lastPlan.reply || "अभी तक उत्तर नहीं दिया गया है।";
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
 
-    document.getElementById("studentReply").innerHTML = `
-      <h3>आपका उत्तर:</h3>
-      <p>${reply}</p>
-    `;
-  }
-</script>
+      const name = document.getElementById('name').value.trim();
+      const study = document.getElementById('study').value.trim();
+      const time = document.getElementById('time').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const task = document.getElementById('task').value;
+
+      const newEntry = {
+        name, study, time, subject, task, reply: ""
+      };
+
+      const existing = JSON.parse(localStorage.getItem('practicePlans')) || [];
+      existing.push(newEntry);
+      localStorage.setItem('practicePlans', JSON.stringify(existing));
+
+      form.reset();
+      successMsg.style.display = "block";
+      setTimeout(() => successMsg.style.display = "none", 4000);
+
+      loadLatestAnswer();
+    });
+
+    window.onload = loadLatestAnswer;
+  </script>
 
 </body>
 </html>
