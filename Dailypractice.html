@@ -1,0 +1,204 @@
+<!-- 📘 student-daily-planner.html -->
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <title>📘 Daily Practice Planner - Student</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Baloo 2', cursive;
+      background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+      margin: 0;
+      padding: 30px;
+      animation: fadeIn 1s ease-in;
+    }
+
+    h1 {
+      text-align: center;
+      color: #4a148c;
+      margin-bottom: 30px;
+      font-size: 36px;
+      animation: slideIn 0.8s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;} to {opacity: 1;}
+    }
+
+    @keyframes slideIn {
+      0% {transform: translateY(-40px); opacity: 0;}
+      100% {transform: translateY(0); opacity: 1;}
+    }
+
+    form {
+      background: #ffffff;
+      padding: 40px;
+      max-width: 700px;
+      margin: auto;
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .input-group {
+      margin-bottom: 25px;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #6a1b9a;
+    }
+
+    .input-group input, .input-group select {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 16px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .input-group input:focus, .input-group select:focus {
+      outline: none;
+      border-color: #8e24aa;
+      box-shadow: 0 0 8px #ce93d8;
+    }
+
+    button {
+      background: linear-gradient(45deg, #8e24aa, #6a1b9a);
+      color: white;
+      padding: 16px 28px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: 0.4s ease;
+      width: 100%;
+    }
+
+    button:hover {
+      background: linear-gradient(45deg, #6a1b9a, #4a148c);
+      transform: scale(1.02);
+    }
+
+    .success {
+      background: #c8e6c9;
+      color: #1b5e20;
+      padding: 18px;
+      margin-top: 25px;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: bold;
+      animation: slideIn 0.6s ease-in-out;
+    }
+
+    .latest-answer {
+      margin-top: 40px;
+      background: #fff3e0;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      font-size: 16px;
+      color: #444;
+      animation: fadeIn 1s ease-in;
+    }
+
+    .latest-answer h3 {
+      color: #fb8c00;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1><i class="fa-solid fa-book-open-reader"></i> Daily Practice Planner</h1>
+
+  <form id="practiceForm">
+    <div class="input-group">
+      <label><i class="fa-solid fa-user"></i> आपका नाम</label>
+      <input type="text" id="name" required>
+    </div>
+    <div class="input-group">
+      <label><i class="fa-solid fa-book"></i> आज आपने क्या पढ़ा?</label>
+      <input type="text" id="study" required>
+    </div>
+    <div class="input-group">
+      <label><i class="fa-solid fa-clock"></i> कितना समय पढ़ाई की?</label>
+      <input type="text" id="time" required>
+    </div>
+    <div class="input-group">
+      <label><i class="fa-solid fa-graduation-cap"></i> कौन सा विषय पढ़ा?</label>
+      <input type="text" id="subject" required>
+    </div>
+    <div class="input-group">
+      <label><i class="fa-solid fa-check-circle"></i> क्या आज का टास्क पूरा किया?</label>
+      <select id="task" required>
+        <option value="">-- चयन करें --</option>
+        <option value="हाँ">हाँ</option>
+        <option value="नहीं">नहीं</option>
+      </select>
+    </div>
+    <button type="submit"><i class="fa-solid fa-paper-plane"></i> सबमिट करें</button>
+    <div id="successMsg" class="success" style="display: none;">
+      ✅ आपका अभ्यास फॉर्म सफलतापूर्वक भेज दिया गया है!
+    </div>
+  </form>
+
+  <div class="latest-answer" id="latestAnswer" style="display: none;">
+    <h3><i class="fa-solid fa-reply"></i> शिक्षक का उत्तर:</h3>
+    <p id="answerText"></p>
+  </div>
+
+  <script>
+    const form = document.getElementById('practiceForm');
+    const successMsg = document.getElementById('successMsg');
+    const latestAnswer = document.getElementById('latestAnswer');
+    const answerText = document.getElementById('answerText');
+
+    function loadLatestAnswer() {
+      const plans = JSON.parse(localStorage.getItem('practicePlans')) || [];
+      if (plans.length > 0) {
+        const last = plans[plans.length - 1];
+        if (last.reply && last.reply.trim() !== "") {
+          latestAnswer.style.display = "block";
+          answerText.textContent = last.reply;
+        }
+      }
+    }
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const study = document.getElementById('study').value.trim();
+      const time = document.getElementById('time').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const task = document.getElementById('task').value;
+
+      const newEntry = {
+        name, study, time, subject, task, reply: ""
+      };
+
+      const existing = JSON.parse(localStorage.getItem('practicePlans')) || [];
+      existing.push(newEntry);
+      localStorage.setItem('practicePlans', JSON.stringify(existing));
+
+      form.reset();
+      successMsg.style.display = "block";
+      setTimeout(() => successMsg.style.display = "none", 4000);
+
+      loadLatestAnswer();
+    });
+
+    window.onload = loadLatestAnswer;
+  </script>
+
+</body>
+</html>

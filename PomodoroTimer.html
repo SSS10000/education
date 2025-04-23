@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro Timer - SSS Education</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #2193b0, #6dd5ed);
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 32px;
+    }
+
+    .timer {
+      font-size: 60px;
+      margin: 30px 0;
+      font-weight: bold;
+    }
+
+    .controls button {
+      margin: 10px;
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .start { background-color: #4CAF50; color: white; }
+    .pause { background-color: #FF9800; color: white; }
+    .reset { background-color: #f44336; color: white; }
+
+    .start:hover { background-color: #45a049; }
+    .pause:hover { background-color: #e68a00; }
+    .reset:hover { background-color: #da190b; }
+
+    .mode-buttons button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: rgba(255,255,255,0.2);
+      border: 1px solid white;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: #fff;
+      color: #2193b0;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .alert-box {
+      display: none;
+      background-color: #ffdd57;
+      color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      margin-top: 20px;
+      text-align: center;
+      font-size: 20px;
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(5px); }
+      75% { transform: translateX(-5px); }
+      100% { transform: translateX(0); }
+    }
+
+    .shake {
+      animation: shake 0.5s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+
+<a href="student.html" class="back-btn">⟵ Back</a>
+<div class="container">
+  <h1>Pomodoro Timer</h1>
+  <div class="mode-buttons">
+    <button onclick="setMode('focus')">🎯 Focus</button>
+    <button onclick="setMode('short')">☕ Short Break</button>
+    <button onclick="setMode('long')">🌴 Long Break</button>
+  </div>
+  <div class="timer" id="timer">25:00</div>
+  <div class="controls">
+    <button class="start" onclick="startTimer()">Start</button>
+    <button class="pause" onclick="pauseTimer()">Pause</button>
+    <button class="reset" onclick="resetTimer()">Reset</button>
+  </div>
+  <div class="alert-box" id="alertBox">Time's up! Take a break! 😎</div>
+</div>
+
+<script>
+  let timerDisplay = document.getElementById('timer');
+  let alertBox = document.getElementById('alertBox');
+  let timer;
+  let timeLeft = 1500; // 25 minutes
+  let isRunning = false;
+
+  function formatTime(seconds) {
+    let mins = Math.floor(seconds / 60);
+    let secs = seconds % 60;
+    return `${mins < 10 ? '0' : ''}${mins}:${secs < 10 ? '0' : ''}${secs}`;
+  }
+
+  function updateDisplay() {
+    timerDisplay.textContent = formatTime(timeLeft);
+  }
+
+  function startTimer() {
+    if (isRunning) return;
+    isRunning = true;
+    timer = setInterval(() => {
+      if (timeLeft > 0) {
+        timeLeft--;
+        updateDisplay();
+      } else {
+        clearInterval(timer);
+        isRunning = false;
+        showAlert();
+      }
+    }, 1000);
+  }
+
+  function pauseTimer() {
+    clearInterval(timer);
+    isRunning = false;
+  }
+
+  function resetTimer() {
+    pauseTimer();
+    setMode(currentMode);
+  }
+
+  let currentMode = 'focus';
+  function setMode(mode) {
+    currentMode = mode;
+    switch (mode) {
+      case 'focus':
+        timeLeft = 1500; // 25 min
+        break;
+      case 'short':
+        timeLeft = 300; // 5 min
+        break;
+      case 'long':
+        timeLeft = 900; // 15 min
+        break;
+    }
+    updateDisplay();
+  }
+
+  function showAlert() {
+    alertBox.style.display = 'block';
+    alertBox.classList.add('shake');
+    
+    setTimeout(() => {
+      alertBox.classList.remove('shake');
+    }, 500); // Remove shake effect after animation
+  }
+
+  updateDisplay();
+</script>
+
+</body>
+</html>
