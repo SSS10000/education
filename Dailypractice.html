@@ -1,4 +1,3 @@
-<!-- 📘 student-daily-planner.html -->
 <!DOCTYPE html>
 <html lang="hi">
 <head>
@@ -151,6 +150,7 @@
     </div>
   </form>
 
+  <!-- Latest teacher reply section added below -->
   <div class="latest-answer" id="latestAnswer" style="display: none;">
     <h3><i class="fa-solid fa-reply"></i> शिक्षक का उत्तर:</h3>
     <p id="answerText"></p>
@@ -162,6 +162,7 @@
     const latestAnswer = document.getElementById('latestAnswer');
     const answerText = document.getElementById('answerText');
 
+    // Function to load teacher's reply from localStorage
     function loadLatestAnswer() {
       const plans = JSON.parse(localStorage.getItem('practicePlans')) || [];
       if (plans.length > 0) {
@@ -183,7 +184,7 @@
       const task = document.getElementById('task').value;
 
       const newEntry = {
-        name, study, time, subject, task, reply: ""
+        name, study, time, subject, task, reply: ""  // reply field empty for now
       };
 
       const existing = JSON.parse(localStorage.getItem('practicePlans')) || [];
@@ -194,10 +195,10 @@
       successMsg.style.display = "block";
       setTimeout(() => successMsg.style.display = "none", 4000);
 
-      loadLatestAnswer();
+      loadLatestAnswer();  // Load teacher's reply after submitting
     });
 
-    window.onload = loadLatestAnswer;
+    window.onload = loadLatestAnswer;  // Load teacher's reply when page loads
   </script>
 
 </body>
