@@ -2,177 +2,102 @@
 <html lang="hi">
 <head>
   <meta charset="UTF-8">
-  <title>📋 छात्र अभ्यास योजनाएं - एडमिन पैनल</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📘 Admin - Daily Practice Planner</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
   <style>
+    /* Similar styling as Student Panel */
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #fffde7;
-      margin: 0;
-      padding: 20px;
+      font-family: 'Baloo 2', cursive;
+      background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+      padding: 30px;
     }
-
-    h2 {
-      text-align: center;
-      color: #e65100;
-      margin-bottom: 25px;
-      font-size: 28px;
-    }
-
-    .search-box {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .search-box input {
-      padding: 10px;
-      font-size: 16px;
-      width: 60%;
-      max-width: 400px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-
-    .entry {
+    .form-container {
       background: #fff;
       padding: 20px;
-      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+    .input-group {
       margin-bottom: 15px;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: transform 0.2s;
     }
-
-    .entry:hover {
-      transform: scale(1.01);
+    .input-group label {
+      font-weight: 600;
     }
-
-    .entry p {
-      margin: 8px 0;
-      font-size: 16px;
-    }
-
-    .entry strong {
-      color: #3e2723;
-    }
-
-    textarea {
+    .input-group input, .input-group textarea {
       width: 100%;
       padding: 10px;
-      margin-top: 10px;
-      font-size: 14px;
       border-radius: 8px;
-      border: 1px solid #bbb;
-      resize: vertical;
+      border: 1px solid #ccc;
     }
-
     button {
-      margin-top: 10px;
-      background-color: #ff6f00;
+      padding: 12px 25px;
+      background-color: #8e24aa;
       color: white;
-      padding: 10px 20px;
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      font-size: 15px;
-      transition: background-color 0.3s;
     }
-
     button:hover {
-      background-color: #e65100;
-    }
-
-    .export-btn {
-      display: block;
-      margin: 20px auto;
-      background-color: #43a047;
-    }
-
-    .export-btn:hover {
-      background-color: #2e7d32;
-    }
-
-    @media (max-width: 600px) {
-      .search-box input {
-        width: 90%;
-      }
-
-      .entry {
-        font-size: 14px;
-        padding: 15px;
-      }
+      background-color: #6a1b9a;
     }
   </style>
 </head>
 <body>
 
-  <h2><i class="fa-solid fa-clipboard-list"></i> छात्र अभ्यास योजनाएं</h2>
+  <h1>📘 Admin Dashboard</h1>
 
-  <div class="search-box">
-    <input type="text" id="searchInput" placeholder="नाम, विषय, अध्ययन, या उत्तर खोजें..." onkeyup="renderPlans()">
+  <div id="studentForms">
+    <!-- Student Form Data will be listed here -->
   </div>
 
-  <div id="plannerContainer"></div>
-
-  <button class="export-btn" onclick="exportReplies()"><i class="fa-solid fa-file-export"></i> सभी उत्तर एक्सपोर्ट करें</button>
-
   <script>
-    const container = document.getElementById('plannerContainer');
-    const searchInput = document.getElementById('searchInput');
-    let plans = JSON.parse(localStorage.getItem('practicePlans')) || [];
+    // Get data from localStorage (Simulating from database for this example)
+    const studentData = JSON.parse(localStorage.getItem('practicePlans')) || [];
 
-    function renderPlans() {
-      container.innerHTML = '';
-      const searchTerm = searchInput.value.toLowerCase();
-      plans.forEach((plan, index) => {
-        if (
-          plan.name.toLowerCase().includes(searchTerm) ||
-          plan.subject.toLowerCase().includes(searchTerm) ||
-          plan.study.toLowerCase().includes(searchTerm) ||
-          (plan.reply && plan.reply.toLowerCase().includes(searchTerm))
-        ) {
-          const div = document.createElement('div');
-          div.className = 'entry';
-          div.innerHTML = `
-            <p><strong>📅 दर्ज किया गया:</strong> ${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString()}</p>
-            <p><strong>👤 नाम:</strong> ${plan.name}</p>
-            <p><strong>📘 अध्ययन:</strong> ${plan.study}</p>
-            <p><strong>⏱ समय:</strong> ${plan.time}</p>
-            <p><strong>🎓 विषय:</strong> ${plan.subject}</p>
-            <p><strong>✅ टास्क पूरा:</strong> ${plan.task}</p>
-            <p><strong>🗨️ उत्तर:</strong> ${plan.reply || "उत्तर अभी नहीं दिया गया है।"}</p>
-            <textarea placeholder="उत्तर लिखें..." id="reply-${index}">${plan.reply || ""}</textarea>
-            <button onclick="saveReply(${index})"><i class="fa-solid fa-reply"></i> उत्तर सबमिट करें</button>
-          `;
-          container.appendChild(div);
-        }
+    // Display the student data and allow admin to reply
+    function displayForms() {
+      const container = document.getElementById('studentForms');
+      container.innerHTML = '';  // Clear existing data
+
+      studentData.forEach((student, index) => {
+        const studentDiv = document.createElement('div');
+        studentDiv.classList.add('form-container');
+
+        studentDiv.innerHTML = `
+          <h3>Student: ${student.name}</h3>
+          <p><strong>Subject:</strong> ${student.subject}</p>
+          <p><strong>Study Details:</strong> ${student.study}</p>
+          <p><strong>Time Spent:</strong> ${student.time} hrs</p>
+          <p><strong>Task Completed:</strong> ${student.task}</p>
+          
+          <h4>Reply:</h4>
+          <textarea id="reply_${index}" rows="4" placeholder="Enter your reply here...">${student.reply || ''}</textarea>
+          <button onclick="submitReply(${index})">Submit Reply</button>
+        `;
+
+        container.appendChild(studentDiv);
       });
     }
 
-    function saveReply(index) {
-      const reply = document.getElementById(`reply-${index}`).value.trim();
-      if (reply !== "") {
-        plans[index].reply = reply;
-        localStorage.setItem('practicePlans', JSON.stringify(plans));
-        alert("✅ उत्तर सफलतापूर्वक सहेजा गया!");
-        renderPlans();
+    // Function to handle reply submission
+    function submitReply(index) {
+      const replyText = document.getElementById(`reply_${index}`).value.trim();
+      if (replyText) {
+        // Update the reply in the studentData
+        studentData[index].reply = replyText;
+        localStorage.setItem('practicePlans', JSON.stringify(studentData));
+
+        // Reload the forms to reflect the updated reply
+        displayForms();
+      } else {
+        alert("Please enter a reply.");
       }
     }
 
-    function exportReplies() {
-      let text = "छात्र अभ्यास उत्तर:\n\n";
-      plans.forEach(plan => {
-        text += `👤 नाम: ${plan.name}\n🎓 विषय: ${plan.subject}\n🗨️ उत्तर: ${plan.reply || "उत्तर नहीं"}\n---\n`;
-      });
-      const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
-      const link = document.createElement("a");
-      link.href = URL.createObjectURL(blob);
-      link.download = "Student_Replies.txt";
-      link.click();
-    }
-
-    renderPlans();
+    // Initially load the forms
+    displayForms();
   </script>
 
 </body>
