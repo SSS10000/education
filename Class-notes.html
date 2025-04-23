@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Class-wise Important Notes - SSS Education</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #e1bee7);
+      padding: 60px 20px 40px;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* Stylish Back Button */
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      text-decoration: none;
+      padding: 12px 20px;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
+      font-weight: 600;
+      border-radius: 50px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1rem;
+    }
+
+    .back-button:hover {
+      background: linear-gradient(135deg, #5a0eb2, #1a5ee0);
+      transform: translateX(-3px) scale(1.03);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .back-button i {
+      font-style: normal;
+      font-size: 1.2rem;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      position: relative;
+    }
+
+    h1::after {
+      content: '';
+      width: 100px;
+      height: 4px;
+      background: #4a90e2;
+      display: block;
+      margin: 10px auto 0;
+      border-radius: 4px;
+    }
+
+    .class-container {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .class-box {
+      background: white;
+      padding: 25px 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      width: 180px;
+      position: relative;
+    }
+
+    .class-box:hover {
+      transform: translateY(-10px) scale(1.05);
+      background: linear-gradient(135deg, #4a90e2, #6a5acd);
+      color: #fff;
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .class-box::after {
+      content: '📘';
+      font-size: 1.8rem;
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      background: #fff;
+      padding: 8px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    @media screen and (max-width: 600px) {
+      .class-box {
+        width: 100%;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .back-button {
+        padding: 10px 16px;
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Stylish Back Button -->
+  <a href="student.html" class="back-button">
+    <i>←</i> Back to Student
+  </a>
+  <h1>📚 Class-wise Important Notes</h1>
+  <div class="class-container">
+    <a href="notes6th.html" class="class-box">Class 6</a>
+    <a href="notes7th.html" class="class-box">Class 7</a>
+    <a href="notes8th.html" class="class-box">Class 8</a>
+    <a href="notes9th.html" class="class-box">Class 9</a>
+    <a href="notes10th.html" class="class-box">Class 10</a>
+    <a href="notes11th.html" class="class-box">Class 11</a>
+    <a href="notes12th.html" class="class-box">Class 12</a>
+  </div>
+</body>
+</html>
