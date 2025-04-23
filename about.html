@@ -5,6 +5,7 @@
   <title>About - SSS Education</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  
   <style>
     * {
       margin: 0;
@@ -38,7 +39,7 @@
 	  font-family: algirian;
     }
 
-    nav {
+         nav {
       display: flex;
       justify-content: center;
       background: #003580;
@@ -46,24 +47,79 @@
       padding: 10px 0;
     }
 
-    nav a {
-      margin: 5px 10px;
-      background-color: #ffffff;
-      color: #003580;
-      padding: 10px 20px;
-      border-radius: 25px;
+    nav {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 18px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+nav a:hover {
+  background: #ffffff;
+  color: #004aad;
+}
+    .button-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      padding: 30px 20px;
+    }
+
+    .styled-button {
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      border: none;
+      border-radius: 12px;
+      padding: 15px 25px;
+      font-size: 1rem;
       font-weight: 600;
-      text-decoration: none;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-    }
-
-    nav a:hover {
-      background-color: #007bff;
       color: white;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+    } 
+	.auth-buttons {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.auth-buttons button {
+  background: white;
+  color: #004aad;
+  border: none;
+  padding: 8px 16px;
+  margin-left: 10px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.auth-buttons button:hover {
+  background: #e0e0e0;
+}
+
+    .styled-button:hover {
       transform: scale(1.05);
+      background: linear-gradient(to right, #00f2fe, #4facfe);
     }
 
+    .styled-button.active {f
+      background: #002f73;
+    }
     .container {
       max-width: 1100px;
       margin: 30px auto;
@@ -186,11 +242,11 @@
         font-size: 1.6rem;
       }
 
-      nav {
-        flex-direction: column;
-      }
-
-      nav a {
+     
+ header h1 {
+        font-size: 1.5rem;
+      }     
+	 nav a {
         text-align: center;
       }
     }
