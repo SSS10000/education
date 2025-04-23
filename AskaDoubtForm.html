@@ -75,13 +75,17 @@
       margin-top: 20px;
       display: none;
     }
+
+    .question-section {
+      margin-bottom: 20px;
+    }
   </style>
 </head>
 <body>
 
   <div class="message-box">
-    <h2>📘 Submit Your Practice Plan</h2>
-    <form id="practiceForm">
+    <h2>📘 Submit Your Question</h2>
+    <form id="questionForm">
       <label for="question">आपका सवाल (Your Question):</label><br>
       <textarea id="question" rows="4" cols="50" required></textarea><br><br>
       <button type="submit">Submit Question</button>
@@ -93,245 +97,39 @@
     ✅ आपके सवाल के नीचे जवाब जल्द ही प्राप्त होगा, कृपया पेज को चेक करते रहें।
   </div>
 
-  <script>
-    const form = document.getElementById('practiceForm');
-    const successMsg = document.getElementById('successMessage');
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      // Show success message after submission
-      successMsg.style.display = 'block';
-
-      // You can also hide it after some time, if needed
-      setTimeout(() => {
-        successMsg.style.display = 'none';
-      }, 3000); // 3 seconds
-    });
-  </script>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>📘 Daily Practice Planner - Student</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #dbe9f4, #f6fafd);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .message-box {
-      background-color: #ffffff;
-      padding: 30px 40px;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      animation: fadeIn 1.2s ease-in-out;
-      max-width: 90%;
-    }
-
-    .message-box h2 {
-      font-size: 24px;
-      color: #333;
-      margin-bottom: 15px;
-    }
-
-    .message-box p {
-      font-size: 18px;
-      color: #555;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .back-button {
-      margin-top: 25px;
-      padding: 10px 25px;
-      font-size: 16px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .back-button:hover {
-      background-color: #0056b3;
-    }
-
-    /* Style for the success message */
-    .success-msg {
-      background-color: #c8e6c9;
-      color: #388e3c;
-      padding: 20px;
-      border-radius: 12px;
-      font-size: 18px;
-      text-align: center;
-      margin-top: 20px;
-      display: none;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="message-box">
-    <h2>📘 Submit Your Practice Plan</h2>
-    <form id="practiceForm">
-      <label for="question">आपका सवाल (Your Question):</label><br>
-      <textarea id="question" rows="4" cols="50" required></textarea><br><br>
-      <button type="submit">Submit Question</button>
-    </form>
-  </div>
-
-  <!-- Success message will appear here -->
-  <div class="success-msg" id="successMessage">
-    ✅ आपके सवाल के नीचे जवाब जल्द ही प्राप्त होगा, कृपया पेज को चेक करते रहें।
+  <!-- Latest Question Section -->
+  <div class="question-section">
+    <h3>आपका सवाल:</h3>
+    <p id="latestQuestion">कोई सवाल नहीं है। कृपया अपना सवाल सबमिट करें।</p>
   </div>
 
   <script>
-    const form = document.getElementById('practiceForm');
+    const form = document.getElementById('questionForm');
+    const questionText = document.getElementById('question');
     const successMsg = document.getElementById('successMessage');
+    const latestQuestion = document.getElementById('latestQuestion');
 
     form.addEventListener('submit', function(e) {
       e.preventDefault();
-      // Show success message after submission
+      
+      // Get the question value
+      const newQuestion = questionText.value.trim();
+
+      // Update the question section
+      if (newQuestion) {
+        latestQuestion.textContent = newQuestion; // Show the new question
+      }
+
+      // Show success message
       successMsg.style.display = 'block';
 
-      // You can also hide it after some time, if needed
+      // Hide the success message after 5 seconds
       setTimeout(() => {
         successMsg.style.display = 'none';
-      }, 3000); // 3 seconds
-    });
-  </script>
+      }, 5000); // 5 seconds
 
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>📘 Daily Practice Planner - Student</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #dbe9f4, #f6fafd);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .message-box {
-      background-color: #ffffff;
-      padding: 30px 40px;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      animation: fadeIn 1.2s ease-in-out;
-      max-width: 90%;
-    }
-
-    .message-box h2 {
-      font-size: 24px;
-      color: #333;
-      margin-bottom: 15px;
-    }
-
-    .message-box p {
-      font-size: 18px;
-      color: #555;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .back-button {
-      margin-top: 25px;
-      padding: 10px 25px;
-      font-size: 16px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .back-button:hover {
-      background-color: #0056b3;
-    }
-
-    /* Style for the success message */
-    .success-msg {
-      background-color: #c8e6c9;
-      color: #388e3c;
-      padding: 20px;
-      border-radius: 12px;
-      font-size: 18px;
-      text-align: center;
-      margin-top: 20px;
-      display: none;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="message-box">
-    <h2>📘 Submit Your Practice Plan</h2>
-    <form id="practiceForm">
-      <label for="question">आपका सवाल (Your Question):</label><br>
-      <textarea id="question" rows="4" cols="50" required></textarea><br><br>
-      <button type="submit">Submit Question</button>
-    </form>
-  </div>
-
-  <!-- Success message will appear here -->
-  <div class="success-msg" id="successMessage">
-    ✅ आपके सवाल के नीचे जवाब जल्द ही प्राप्त होगा, कृपया पेज को चेक करते रहें।
-  </div>
-
-  <script>
-    const form = document.getElementById('practiceForm');
-    const successMsg = document.getElementById('successMessage');
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      // Show success message after submission
-      successMsg.style.display = 'block';
-
-      // You can also hide it after some time, if needed
-      setTimeout(() => {
-        successMsg.style.display = 'none';
-      }, 3000); // 3 seconds
+      // Clear the form input after submit
+      questionText.value = ''; // Clear the textarea for new input
     });
   </script>
 
