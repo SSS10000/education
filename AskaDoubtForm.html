@@ -94,7 +94,7 @@
 
   <!-- Success message will appear here -->
   <div class="success-msg" id="successMessage">
-    ✅ आपके सवाल के नीचे जवाब जल्द ही प्राप्त होगा, कृपया पेज को चेक करते रहें।
+    🎉 आपने सवाल सफलतापूर्वक भेज दिया है! आपका सवाल नीचे दिखेगा और शिक्षक का जवाब जल्द ही आपको मिलेगा। कृपया पेज को समय-समय पर चेक करते रहें! 🚀
   </div>
 
   <!-- Latest Question Section -->
@@ -115,21 +115,21 @@
       // Get the question value
       const newQuestion = questionText.value.trim();
 
-      // Update the question section
+      // If question is provided, update the question section
       if (newQuestion) {
-        latestQuestion.textContent = newQuestion; // Show the new question
+        latestQuestion.textContent = newQuestion; // Display the new question
+
+        // Show success message
+        successMsg.style.display = 'block';
+
+        // Hide the success message after 5 seconds
+        setTimeout(() => {
+          successMsg.style.display = 'none';
+        }, 5000); // 5 seconds delay
+
+        // Clear the form input after submission
+        questionText.value = ''; // Clear the textarea for new input
       }
-
-      // Show success message
-      successMsg.style.display = 'block';
-
-      // Hide the success message after 5 seconds
-      setTimeout(() => {
-        successMsg.style.display = 'none';
-      }, 5000); // 5 seconds
-
-      // Clear the form input after submit
-      questionText.value = ''; // Clear the textarea for new input
     });
   </script>
 
