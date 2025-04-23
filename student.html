@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Corner - SSS Education</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #e0f7fa, #fff);
+      color: #333;
+    }
+
+    header {
+      background: #004aad;
+      color: white;
+      padding: 20px;
+      text-align: center;
+	 }
+	 
+header p {
+      font-size: 1.5rem;
+      margin-top: 5px;
+	  font-family: algirian;
+          }	 
+	 
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 5px;
+	   font-family: algirian;
+    }
+
+     nav {
+      display: flex;
+      justify-content: center;
+      background: #003580;
+      flex-wrap: wrap;
+      padding: 10px 0;
+    }
+
+    nav a {
+      margin: 5px 10px;
+      background-color: #ffffff;
+      color: #003580;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #007bff;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 25px;
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1.page-title {
+      text-align: center;
+      color: #1e88e5;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+	  font-family: algirian;
+    }
+
+    .section {
+      margin-bottom: 50px;
+    }
+
+    .section h2 {
+      color: #1565c0;
+      font-size: 1.8rem;
+      border-left: 6px solid #2196f3;
+      padding-left: 15px;
+      margin-bottom: 25px;
+	  font-family: algirian;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .feature-box {
+      background: linear-gradient(145deg, #dfe9f3, #ffffff);
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease, background 0.3s, box-shadow 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-box::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom right, rgba(66, 165, 245, 0.1), rgba(0, 0, 0, 0.05));
+      top: 0;
+      left: 0;
+      z-index: 0;
+      transition: opacity 0.3s;
+    }
+
+    .feature-box:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      background: linear-gradient(145deg, #e3f2fd, #ffffff);
+    }
+
+    .feature-box a {
+      position: relative;
+      z-index: 1;
+      text-decoration: none;
+      color: #003580;
+      font-weight: 600;
+      font-size: 1.1rem;
+      display: block;
+      margin-top: 10px;
+    }
+
+    .icon {
+      font-size: 40px;
+      margin-bottom: 10px;
+      display: block;
+      color: #007bff;
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (max-width: 768px) {
+      h1.page-title {
+        font-size: 2rem;
+      }
+
+      nav {
+        flex-direction: column;
+      }
+
+      nav a {
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+      }
+    }
+	footer {
+  background-color: #003580;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 50px;
+  border-top: 5px solid #1e88e5;
+}
+
+footer strong {
+  color: #ffffff;
+}
+  </style>
+</head>
+<body>
+<header>
+  <h1>SSS EDUCATION</h1>
+  <p>Smart Learning for Smart Students</p>
+</header>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="about.html">About</a>
+  <a href="student.html">Student</a>
+  <a href="notes.html">Notes</a>
+  <a href="pdf.html">PDF</a>
+  <a href="books.html">Books</a>
+  <a href="class.html">Class</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<div class="container">
+  <h1 class="page-title">🎓 Student Corner - SSS Education</h1>
+  <div class="section">
+    <h2>📘 Study Materials</h2>
+    <div class="features">
+      <div class="feature-box"><span class="icon">📚</span><a href="Class-notes.html">Class-wise Important Notes</a></div>
+      <div class="feature-box"><span class="icon">🔢</span><a href="formula.html">All class math Formulas</a></div>
+      <div class="feature-box"><span class="icon">📂</span><a href="classwiseallsources.html">Classwise Subject Resources</a></div>
+    </div>
+  </div>
+  <div class="section">
+    <h2>❓ Practice & Learning</h2>
+    <div class="features">
+      <div class="feature-box"><span class="icon">🧠</span><a href="dailymcq.html">Daily MCQs</a></div>
+      <div class="feature-box"><span class="icon">🤔</span><a href="askdoubt.html">Ask Your Doubt</a></div>
+      <div class="feature-box"><span class="icon">📅</span><a href="Dailypractice.html">Daily Practice Planner</a></div>
+    </div>
+  </div>
+  <div class="section">
+    <h2>💡 Motivation & Tips</h2>
+    <div class="features">
+      <div class="feature-box"><span class="icon">✨</span><a href="DailyMotivationalAdvice.html">Daily Motivational Advice</a></div>
+      <div class="feature-box"><span class="icon">🎬</span><a href="MotivationalVideos.html">Motivational Videos</a></div>
+      <div class="feature-box"><span class="icon">📈</span><a href="StudyGrowthTips.html">Study Growth Tips</a></div>
+    </div>
+  </div>
+  <div class="section">
+    <h2>🛠 Study Tools</h2>
+    <div class="features">
+      <div class="feature-box"><span class="icon">🧮</span><a href="OnlineCalculator.html">Online Calculator</a></div>
+      <div class="feature-box"><span class="icon">🔬</span><a href="PeriodicTableViewer.html">Periodic Table Viewer</a></div>
+   <div class="feature-box"><span class="icon">📚</span><a href="EnglishDictionary.html">English Dictionary</a></div>
+      <div class="feature-box"><span class="icon">⏱️</span><a href="PomodoroTimer.html">Pomodoro Timer</a></div>
+    </div>
+  </div>
+  <div class="section">
+    <h2>📢 Exam Help</h2>
+    <div class="features">
+      <div class="feature-box"><span class="icon">📄</span><a href="ExamFormDownload.html">Exam Form</a></div>
+      <div class="feature-box"><span class="icon">📝</span><a href="AdmitCard.html">Admit Card</a></div>
+      <div class="feature-box"><span class="icon">📊</span><a href="ResultLink.html">Result Link</a></div>
+      <div class="feature-box"><span class="icon">📅</span><a href="HolidayCalendar.html">Holiday Calendar</a></div>
+    </div>
+  </div>
+  <div class="section">
+    <h2>🎯 Career & Support</h2>
+    <div class="features">
+      <div class="feature-box"><span class="icon">🎓</span><a href="ScholarshipOpportunities.html">Scholarship Opportunities</a></div>
+      <div class="feature-box"><span class="icon">🧭</span><a href="CareerGuidance.html">Career Guidance</a></div>
+      <div class="feature-box"><span class="icon">💬</span><a href="WhatsAppSupport.html">WhatsApp Support</a></div>
+      <div class="feature-box"><span class="icon">📝</span><a href="AskaDoubtForm.html">Ask a Doubt Form</a></div>
+    </div>
+  </div>
+</div>
+<footer>
+  <p>© 2025 <strong>SSS Education</strong>. All rights reserved.</p>
+</footer>
+</body>
+</html>
