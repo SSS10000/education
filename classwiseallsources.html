@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Select Your Class - SSS Education</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(-45deg, #00dbde, #fc00ff, #00c9ff, #7c4dff);
+      background-size: 400% 400%;
+      animation: gradientShift 10s ease infinite;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      color: #fff;
+      position: relative;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 40px;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .class-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      max-width: 90%;
+    }
+
+    .class-buttons a button {
+      padding: 18px 32px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      background: rgba(255, 255, 255, 0.15);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+      color: #fff;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      transition: all 0.4s ease;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .class-buttons a button::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, #ff00cc, #3333ff, #00ffcc);
+      z-index: -1;
+      transition: opacity 0.5s ease;
+      opacity: 0;
+      border-radius: 20px;
+      animation: rotate 6s linear infinite;
+    }
+
+    .class-buttons a button:hover::before {
+      opacity: 1;
+    }
+
+    .class-buttons a button:hover {
+      transform: scale(1.08);
+      color: #fff;
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Back Button */
+    .top-left-back {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: #ffffff22;
+      color: #fff;
+      padding: 10px 20px;
+      border: 2px solid #ffffff55;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1000;
+      backdrop-filter: blur(8px);
+      transition: 0.3s ease;
+    }
+
+    .top-left-back:hover {
+      background: #ffffff44;
+      transform: scale(1.05);
+    }
+
+    /* Floating Blobs */
+    .blob {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      animation: floatBlob 15s infinite ease-in-out;
+      z-index: 0;
+    }
+
+    .blob:nth-child(1) {
+      width: 200px;
+      height: 200px;
+      top: 10%;
+      left: 5%;
+    }
+
+    .blob:nth-child(2) {
+      width: 300px;
+      height: 300px;
+      bottom: 5%;
+      right: 10%;
+    }
+
+    .blob:nth-child(3) {
+      width: 150px;
+      height: 150px;
+      top: 50%;
+      right: 20%;
+    }
+
+    @keyframes floatBlob {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-30px); }
+    }
+
+    @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 25px;
+      }
+
+      .class-buttons a button {
+        font-size: 1.1rem;
+        padding: 14px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating back button -->
+  <button class="top-left-back" onclick="window.history.back()">← Back</button>
+
+  <!-- Page Title -->
+  <h1>Select Your Class to Start Learning</h1>
+
+  <!-- Class Buttons -->
+  <div class="class-buttons">
+    <a href="Class 6th all resource.html"><button>Class 6</button></a>
+    <a href="Class 7th all resource.html"><button>Class 7</button></a>
+    <a href="Class 8th all resource.html"><button>Class 8</button></a>
+    <a href="Class 9th all resource.html"><button>Class 9</button></a>
+    <a href="Class 10th all resource.html"><button>Class 10</button></a>
+    <a href="Class 11th all resource.html"><button>Class 11</button></a>
+    <a href="Class 12th all resource.html"><button>Class 12</button></a>
+  </div>
+
+  <!-- Floating Decorative Blobs -->
+  <div class="blob"></div>
+  <div class="blob"></div>
+  <div class="blob"></div>
+
+</body>
+</html>
