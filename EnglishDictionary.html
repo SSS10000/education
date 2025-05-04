@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Word Meaning Dictionary - SSS Education</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f4f8;
+    }
+
+    .container {
+      max-width: 900px;
+      background: #fff;
+      margin: 40px auto;
+      padding: 40px 30px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      min-height: 100vh;
+      position: relative;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #2c3e50;
+    }
+
+    .search-box {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    input[type="text"] {
+      width: 70%;
+      padding: 12px 16px;
+      font-size: 18px;
+      border-radius: 8px 0 0 8px;
+      border: 1px solid #ccc;
+      outline: none;
+    }
+
+    button.search-btn {
+      padding: 12px 20px;
+      font-size: 18px;
+      background: #42a5f5;
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 0 8px 8px 0;
+    }
+
+    button.search-btn:hover {
+      background: #1e88e5;
+    }
+
+    .word-card {
+      background: #e3f2fd;
+      border-left: 5px solid #2196f3;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .word-card p {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.5;
+      color: #333;
+    }
+
+    .word {
+      font-weight: bold;
+      font-size: 20px;
+      color: #1565c0;
+    }
+
+    /* Back button */
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: #1565c0;
+      color: white;
+      padding: 10px 18px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background: #0d47a1;
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .container {
+        box-shadow: none;
+      }
+
+      .search-box,
+      .back-btn {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <a href="student.html" class="back-btn">← Back</a>
+
+    <h1>📖 English Word Meaning Dictionary</h1>
+
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search for a word...">
+      <button class="search-btn" onclick="filterWords()">Search</button>
+    </div>
+
+    <!-- Static word list -->
+    <div id="wordList">
+      <div class="word-card">
+        <p class="word">ENGLISH</p>
+        <p>अंग्रेजी</p>
+		</div>
+		
+      <div class="word-card">
+        <p class="word">SCIENCE</p>
+        <p>Vigyan</p>
+      </div>
+	  
+	  <div class="word-card">
+        <p class="word">BE</p>
+        <p>होना</p>
+      </div>
+	  
+      <div class="word-card">
+        <p class="word">STUDENT</p>
+        <p>Chhatra</p>
+      </div>
+	  
+      <div class="word-card">
+        <p class="word">TEACHER</p>
+        <p>Shikshak</p>
+      </div>
+      <div class="word-card">
+        <p class="word">COMPUTER</p>
+        <p>Ganank Yantra</p>
+      </div>
+      <div class="word-card">
+        <p class="word">EDUCATION</p>
+        <p>Shiksha</p>
+      </div>
+      <div class="word-card">
+        <p class="word">BOOK</p>
+        <p>Kitaab</p>
+      </div>
+      <div class="word-card">
+        <p class="word">EXAM</p>
+        <p>Pariksha</p>
+      </div>
+      <div class="word-card">
+        <p class="word">KNOWLEDGE</p>
+        <p>Gyaan</p>
+      </div>
+      <div class="word-card">
+        <p class="word">MOTIVATION</p>
+        <p>Prerna</p>
+      </div>
+      <!-- Add more word-meaning blocks as needed -->
+    </div>
+  </div>
+
+  <script>
+    function filterWords() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const cards = document.querySelectorAll('.word-card');
+
+      cards.forEach(card => {
+        const word = card.querySelector('.word').textContent.toLowerCase();
+        if (word.includes(input)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
