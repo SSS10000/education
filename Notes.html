@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Notes - SSS Education</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Stardos+Stencil&display=swap" rel="stylesheet"/>
+
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom right, #e3f2fd, #ffffff);
+      color: #333;
+    }
+
+    header {
+      background: #004aad;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+	
+	
+	header p {
+      font-size: 1.5rem;
+      margin-top: 5px;
+	  font-family: algirian;
+          }
+	
+
+    header h1 {
+      font-size: 2rem;
+	  font-family: algirian;
+    }
+
+       nav {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 18px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+nav a:hover {
+  background: #ffffff;
+  color: #004aad;
+}
+    .button-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      padding: 30px 20px;
+    }
+   
+
+  nav {
+      display: flex;
+      justify-content: center;
+      background: #003580;
+      flex-wrap: wrap;
+      padding: 10px 0;
+    }
+
+    nav {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 18px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+nav a:hover {
+  background: #ffffff;
+  color: #004aad;
+}
+    .button-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      padding: 30px 20px;
+    }
+
+    .styled-button {
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      border: none;
+      border-radius: 12px;
+      padding: 15px 25px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: white;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+    } 
+	.auth-buttons {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.auth-buttons button {
+  background: white;
+  color: #004aad;
+  border: none;
+  padding: 8px 16px;
+  margin-left: 10px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.auth-buttons button:hover {
+  background: #e0e0e0;
+}
+
+    
+  
+
+  
+    
+    .notes-container {
+      max-width: 900px;
+      margin: 40px auto;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .notes-container h2 {
+      color: #004aad;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      border-bottom: 3px solid #004aad;
+      display: inline-block;
+      padding-bottom: 5px;
+     font-family: algirian;
+          }
+    
+    .notes-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .notes-buttons a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      color: white;
+      padding: 18px 40px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 8px 25px rgba(0, 114, 255, 0.4);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .notes-buttons a i {
+      font-size: 1.3rem;
+    }
+
+    .notes-buttons a:hover {
+      background: linear-gradient(to right, #0072ff, #00c6ff);
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 12px 30px rgba(0, 114, 255, 0.6);
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #003580;
+      color: white;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 600px) {
+      .notes-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .notes-buttons a {
+        width: 80%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SSS EDUCATION</h1>
+    <p>Smart Learning for Smart Students</p>
+  </header>
+ <nav>
+   <a href="index.html">Home</a>
+    <a href="Gallery.html">Gallery</a>
+    <a href="About.html">About</a>
+    <a href="Student.html">Student</a>
+    <a href="Notes.html" class="active">Notes</a>
+    <a href="Pdf.html">PDF</a>
+    <a href="Books.html">Books</a>
+    <a href="Class.html">Class</a>
+    <a href="Contact.html">Contact</a>
+  </nav>
+  <section class="notes-container">
+    <h2>SELECT YOUR NOTES TYPE SUBJECTIVE OR/या OBJECTIVE</h2>
+    <div class="notes-buttons">
+      <a href="class 6th to 12th subjectivequestionand answer.html"><i class="fas fa-pen-nib"></i> Subjective Notes</a>
+      <a href="class 6th to 12th objectivemcq.html"><i class="fas fa-check-circle"></i> Objective Notes</a>
+    </div>
+  </section>
+  <footer>
+    © 2025 SSS Education. All rights reserved.
+  </footer>
+</body>
+</html>
