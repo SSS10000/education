@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 6th Math Formulas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            padding: 40px;
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            color: #333;
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .search-bar {
+            margin: 30px auto;
+            text-align: center;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #007bff;
+            border-radius: 8px;
+            width: 50%;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-bar input:focus {
+            border-color: #0056b3;
+        }
+
+        .formula {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: #f0f8ff;
+            border-radius: 12px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-in-out;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .formula h2 {
+            font-size: 24px;
+            color: #007bff;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .formula p {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .pdf-option {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .pdf-option button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .pdf-option button:hover {
+            background-color: #0056b3;
+            transform: translateY(-5px);
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 18px;
+            color: #007bff;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #e0e0e0;
+            transform: translateY(-2px);
+        }
+
+        /* Animation for formulas */
+        window.onload = function() {
+            const formulas = document.querySelectorAll('.formula');
+            formulas.forEach((formula, index) => {
+                setTimeout(() => {
+                    formula.style.opacity = 1;
+                    formula.style.transform = 'translateY(0)';
+                }, index * 500);
+            });
+        };
+
+        /* Print CSS */
+        @media print {
+            body {
+                background-color: white;
+                color: black;
+            }
+
+            /* Hide everything except formulas */
+            .container {
+                background-color: transparent;
+                box-shadow: none;
+                padding: 0;
+            }
+
+            .page-title, .search-bar, .pdf-option, .back-btn {
+                display: none;
+            }
+
+            .formula {
+                page-break-inside: avoid;
+                padding: 20px;
+                background-color: white;
+                border: 1px solid #ddd;
+                margin-bottom: 20px;
+                box-shadow: none;
+            }
+
+            .formula h2 {
+                color: #000;
+                font-size: 22px;
+            }
+
+            .formula p {
+                color: #333;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Back Button -->
+    <a href="formula.html" class="back-btn">&#8592; Back</a>
+
+    <div class="container">
+        <h1 class="page-title">Class 10th Math Formulas</h1>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search formulas..." onkeyup="filterFormulas()">
+        </div>
+
+        <div class="content" id="formulaList">
+            <div class="formula">
+                <h2>Formula 1: Addition of Fractions</h2>
+                <p>सूत्र: <strong> a/b + c/d = (ad + bc) / bd </strong></p>
+            </div>
+
+            <div class="formula">
+                <h2>Formula 2: Subtraction of Fractions</h2>
+                <p>सूत्र: <strong> a/b - c/d = (ad - bc) / bd </strong></p>
+            </div>
+
+            <div class="formula">
+                <h2>Formula 3: Area of Triangle</h2>
+                <p>सूत्र: <strong> क्षेत्रफल = 1/2 * आधार * ऊँचाई </strong></p>
+            </div>
+
+            <div class="formula">
+                <h2>Formula 4: Area of Square</h2>
+                <p>सूत्र: <strong> क्षेत्रफल = पक्ष^2 </strong></p>
+            </div>
+
+            <div class="formula">
+                <h2>Formula 5: Perimeter of Rectangle</h2>
+                <p>सूत्र: <strong> परिमाप = 2 * (लंबाई + चौड़ाई) </strong></p>
+            </div>
+
+            <!-- PDF Print Option -->
+            <div class="pdf-option">
+                <button onclick="window.print()">Print Formulas as PDF</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple animation on page load
+        window.onload = function() {
+            const formulas = document.querySelectorAll('.formula');
+            formulas.forEach((formula, index) => {
+                setTimeout(() => {
+                    formula.style.opacity = 1;
+                    formula.style.transform = 'translateY(0)';
+                }, index * 500);
+            });
+        };
+
+        // Filter formulas based on search input
+        function filterFormulas() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const formulas = document.querySelectorAll('.formula');
+
+            formulas.forEach(formula => {
+                const title = formula.querySelector('h2').innerText.toLowerCase();
+                const content = formula.querySelector('p').innerText.toLowerCase();
+
+                if (title.includes(searchInput) || content.includes(searchInput)) {
+                    formula.style.display = 'block';
+                } else {
+                    formula.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
