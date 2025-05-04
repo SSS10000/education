@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Subjective Notes - SSS Education</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Stardos+Stencil&display=swap" rel="stylesheet"/>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom right, #d0f0fd, #f5faff);
+      color: #222;
+      padding: 20px;
+    }
+
+    .back-button {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: #6a11cb;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 30px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      z-index: 999;
+      transition: all 0.3s ease;
+    }
+
+    .back-button:hover {
+      background: #2575fc;
+      transform: scale(1.05);
+    }
+
+    header {
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    header h2 {
+      font-size: 2.5rem;
+      color: #6a11cb;
+      font-family: 'Stardos Stencil', cursive;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.3rem;
+      color: #333;
+    }
+
+    .class-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 50px;
+      padding: 10px;
+    }
+
+    .class-button {
+      color: white;
+      border: none;
+      padding: 18px 35px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      position: relative;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      animation: pulse 2.5s infinite;
+    }
+
+    .class-button:hover {
+      transform: scale(1.07);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(106, 17, 203, 0.4); }
+      70% { box-shadow: 0 0 0 20px rgba(106, 17, 203, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(106, 17, 203, 0); }
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding: 15px;
+      background: #6a11cb;
+      color: white;
+    }
+
+    @media (max-width: 600px) {
+      .class-button {
+        width: 80%;
+      }
+
+      header h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="notes.html"><button class="back-button"><i class="fas fa-arrow-left"></i> Back</button></a>
+
+  <header>
+    <h2>SUBJECTIVE NOTES</h2>
+    <p>Select Your Class</p>
+  </header>
+
+  <section class="class-buttons">
+    <a href="6th subjective notes.html"><button class="class-button" style="background: linear-gradient(45deg, #1d2b64, #f8cdda);">Class 6</button></a>
+    <a href="7th subjective notes.html"><button class="class-button" style="background: linear-gradient(45deg, #6a11cb, #2575fc);">Class 7</button></a>
+    <a href="8th subjective notes.html"><button class="class-button" style="background: linear-gradient(45deg, #7b4397, #dc2430);">Class 8</button></a>
+    <a href="9th subjective notes.html"><button class="class-button" style="background: linear-gradient(45deg, #1fa2ff, #12d8fa, #a6ffcb);">Class 9</button></a>
+    <a href="10th subjective notes.html"><button class="class-button" style="background: linear-gradient(45deg, #3a1c71, #d76d77, #ffaf7b);">Class 10</button></a>
+    <a href="11th subjective notes.html"><button class="class-button" style="background: linear-gradient(45deg, #ff758c, #ff7eb3);">Class 11</button></a>
+    <a href="12th subjective notes.html"><button class="class-button" style="background: linear-gradient(45deg, #4facfe, #00f2fe);">Class 12</button></a>
+  </section>
+
+  <footer>
+    © 2025 SSS Education. All rights reserved.
+  </footer>
+</body>
+</html>
